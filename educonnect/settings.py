@@ -106,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'student_teacher.CustomUser'
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -136,4 +135,4 @@ LOGIN_REDIRECT_URL ='t-home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-}
+
