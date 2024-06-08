@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sregister/', student_views.register, name='sregister'),
     path('tregister/', teacher_views.tregister, name='tregister'),
+    path('tdepartment/', teacher_views.tdepartment, name = 'tdepartment'),
     path('slogin/', auth_views.LoginView.as_view(template_name='students/login.html'), name='slogin'),
     path('slogout/', auth_views.LogoutView.as_view(template_name='students/logout.html'), name='slogout'),
     path('tlogin/', auth_views.LoginView.as_view(template_name='teachers/login.html'), name = 'tlogin'),

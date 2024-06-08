@@ -129,7 +129,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 's-home'
 
-LOGIN_REDIRECT_URL ='t-home'
+LOGIN_REDIRECT_URL = 't-home'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

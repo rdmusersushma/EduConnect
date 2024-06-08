@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
-from .models import Teacher
+from student_dashboard.models import Post
 
 
 
 def home(request):
 	context = {
-		'info' : Teacher.objects.all()
+		'info' : Post.objects.all()
 	}
 	return render(request, 'Teacher_dashboard/home.html', context)
