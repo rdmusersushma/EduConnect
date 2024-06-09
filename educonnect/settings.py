@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'formtools',
     'teachers.apps.TeachersConfig',
     'Teacher_dashboard.apps.TeacherDashboardConfig',
     'students.apps.StudentsConfig',
@@ -136,3 +137,4 @@ LOGIN_REDIRECT_URL = 't-home'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+AUTH_USER_MODEL = 'classroom.CustomUser'

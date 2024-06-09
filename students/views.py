@@ -15,3 +15,5 @@ def register(request):
 	return render(request, 'students/register.html', {'form':form})
 
 # Create your views here.
+
+

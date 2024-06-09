@@ -19,20 +19,24 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from students import views as student_views
 from teachers import views as teacher_views
+from classroom.views import UserCreationWizard
+from classroom.forms import UserRegistrationForm, StudentRegistrationForm, TeacherRegistrationForm 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sregister/', student_views.register, name='sregister'),
-    path('tregister/', teacher_views.tregister, name='tregister'),
+    path('register/', UserCreationWizard.as_view([UserRegistrationForm, StudentRegistrationForm]), name='register'),
+    # path('sregister/', student_views.register, name='sregister'),
+    # path('tregister/', teacher_views.tregister, name='tregister'),
     path('tdepartment/', teacher_views.tdepartment, name = 'tdepartment'),
-    path('slogin/', auth_views.LoginView.as_view(template_name='students/login.html'), name='slogin'),
+    path('slogin/', auth_views.LoginView.as_view(template_name='students/login.html',next_page='/student/sprofile'), name='slogin'),
+    path('slogin/', auth_views.LoginView.as_view(template_name='students/login.html',next_page='/student/sprofile'), name='slogin'),
     path('slogout/', auth_views.LogoutView.as_view(template_name='students/logout.html'), name='slogout'),
-    path('tlogin/', auth_views.LoginView.as_view(template_name='teachers/login.html'), name = 'tlogin'),
+    path('tlogin/', auth_views.LoginView.as_view(template_name='teachers/login.html', next_page='/teacher'), name = 'tlogin'),
    # path('tlogout/', auth_views.LoginView.as_view(template_name='teachers/logout.html'),name='tlogout'),
     path('', include('classroom.urls')),
-    path('',include('student_dashboard.urls')),
-    path('Teacher/',include('Teacher_dashboard.urls')),
+    path('student/',include('student_dashboard.urls')),
+    path('teacher/',include('Teacher_dashboard.urls')),
     #path('',include('teachers.urls')),
    
    
